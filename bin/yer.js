@@ -14,7 +14,8 @@ var program = require('commander'),
   // Native
   fs = require('fs'),
   sys = require('util'),
-  exec = require('child_process').exec,
+  pro = require('child_process'),
+  exec = pro.exec,
   os = require('os'),
 
   // Local
@@ -160,11 +161,6 @@ program.command('project [name]')
           console.log( clc.yellow('Done!') );
           console.log( label('Run ')+valid(' cd js && npm install -d && grunt')+label(' to get started') );
 
-          exec("cd js && npm install -d && grunt", function(a,b,c){
-            console.log(b);
-          });
-
-        });
       } else {
         console.log( clc.red('Could not fetch norm.css') );
       }
@@ -232,7 +228,7 @@ program.command('reset')
     /*exec('ls',function(a, b, c){
       console.log(b);
     });*/
-    //exec('sudo rm -rf css img js && rm index.html',null);
+    exec('sudo rm -rf css img js && rm index.html',null);
 
 });
 
