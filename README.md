@@ -3,6 +3,8 @@ Yer.js
 
 Yer is a command line interface for managing front-end web development in +rehabstudio
 
+__THIS IS STILL IN DEVELOPMENT__
+
 Install
 -------
 
