@@ -89,4 +89,4 @@ To alter the order of your scripts, you can edit the __package.json__ file of yo
 	}
 	//..
 
-
+and then run __yer sync__ again.
