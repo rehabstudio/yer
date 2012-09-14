@@ -67,3 +67,20 @@ This is a lazytool™ designed to generate a vhost quickly and easily. This curr
 Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
  
 On completetion, your primary browser will open with the new relative vhost.
+
+###yer sync
+
+On adding a new JS file in the __src__ or __lib__ directories, you can run this command to update your grunt file.
+
+To alter the order of your scripts, you can edit the __package.json__ file of your project
+
+	"yer": {
+		"lib": [
+			"lib/jquery.min.js"
+		],
+		"src": [
+			"src/app.js"
+		]
+	}
+
+
