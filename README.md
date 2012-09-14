@@ -56,13 +56,13 @@ This does the following,
  2) Installs the grunt depenandcies of grunt-sass and grunt-css
  3) Executes the grunt command to compile the applications css
  
- You are now good to go!
+You are now good to go!
  
- ###yer host <project name>
+###yer host <project name>
  
- This is a lazytool™ designed to generate a vhost quickly and easily. This currently only works on OSX and Linux ( GTFO windows ).
+This is a lazytool™ designed to generate a vhost quickly and easily. This currently only works on OSX and Linux ( GTFO windows ).
  
- Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
+Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
  
- On completetion, your primary browser will open with the new relative vhost.
+On completetion, your primary browser will open with the new relative vhost.
 	
