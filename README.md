@@ -66,7 +66,7 @@ This is a lazytool™ designed to generate a vhost quickly and easily. This curr
  
 Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
  
-On completetion, your primary browser will open with the new relative vhost.
+On completetion, your primary browser will open with the new relative host url.
 
 ###yer sync
 
