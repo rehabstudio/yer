@@ -46,15 +46,23 @@ This will generate the basic template of the following,
 	index.html
 	.gitignore
 	
-This should instantly generate template, with yer returning a line of code for you to execute.
+This should instantly generate template, with yer returning a line of code for your to execute.
 
 	cd js && npm install -d && grunt
 	
 This does the following,
 
  1) Go into your projects js directory
-
  2) Installs the grunt depenandcies of grunt-sass and grunt-css
-
  3) Executes the grunt command to compile the applications css
+ 
+ You are now good to go!
+ 
+ ###yer host <project name>
+ 
+ This is a lazytool™ designed to generate a vhost quickly and easily. This currently only works on OSX and Linux ( GTFO windows ).
+ 
+ Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
+ 
+ On completetion, your primary browser will open with the new relative vhost.
 	
