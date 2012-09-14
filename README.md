@@ -53,6 +53,8 @@ This should instantly generate template, with yer returning a line of code for y
 This does the following,
 
  1) Go into your projects js directory
+
  2) Installs the grunt depenandcies of grunt-sass and grunt-css
+ 
  3) Executes the grunt command to compile the applications css
 	
