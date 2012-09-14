@@ -18,7 +18,7 @@ Options
 
 Yer comes with the following options
 
-###yer project <project name>
+###yer project &lt;project name&gt;
 
 If your make a new folder for a project in a http capable folder, go into it via Terminal and enter __yer project__
 
@@ -58,7 +58,7 @@ This does the following,
  
 You are now good to go!
  
-###yer host <project name>
+###yer host &lt;project name&gt;
  
 This is a lazytool™ designed to generate a vhost quickly and easily. This currently only works on OSX and Linux ( GTFO windows ).
  
