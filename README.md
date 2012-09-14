@@ -46,7 +46,7 @@ This will generate the basic template of the following,
 	index.html
 	.gitignore
 	
-This should instantly generate template, with yer returning a line of code for your to execute.
+This should instantly generate template, with yer returning a line of code for you to execute.
 
 	cd js && npm install -d && grunt
 	
@@ -55,6 +55,6 @@ This does the following,
  1) Go into your projects js directory
 
  2) Installs the grunt depenandcies of grunt-sass and grunt-css
- 
+
  3) Executes the grunt command to compile the applications css
 	
