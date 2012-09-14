@@ -53,7 +53,9 @@ This should instantly generate template, with yer returning a line of code for y
 This does the following,
 
  1) Go into your projects js directory
+
  2) Installs the grunt depenandcies of grunt-sass and grunt-css
+ 
  3) Executes the grunt command to compile the applications css
  
 You are now good to go!
@@ -65,4 +67,3 @@ This is a lazytool™ designed to generate a vhost quickly and easily. This curr
 Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
  
 On completetion, your primary browser will open with the new relative vhost.
-	
