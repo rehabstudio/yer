@@ -10,13 +10,19 @@ module.exports = function(grunt) {
     },
     sass: {
         dist: {
-            src: ['../css/src/norm.css','../css/src/layout.scss'],
+            src: ['../css/src/*.css','../css/src/*.scss'],
             dest: '../css/layout.css'
         }
     },
+    libs : {
+      dist : {
+          src : 'lib/*.js',
+          dest : 'dev.<%= project %>.libs.js'
+      }
+    },
     concat : {
         dist : {
-            src : <%= files %>,
+            src : ['<config:libs.dist.dest>','lib/*.js'],
             dest : '<%= project %>.min.js'
         }
     },
@@ -37,17 +43,34 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-sass');
 
-  // Default task.
-  grunt.registerTask('default','sass cssmin');
+  // Libs command, compresses and builds all library files
+  grunt.registerMultiTask('libs', 'Minify library files with UglifyJS.', function() {
+    var files = grunt.file.expandFiles(this.file.src),
+        banner = grunt.task.directive(files[0], function() { return null; });
+
+    if (banner === null) {
+      banner = '';
+    } else {
+      files.shift();
+    }
+
+    var max = grunt.helper('concat', files, {separator: this.data.separator}),
+      min = banner + grunt.helper('uglify', max, grunt.config('uglify'));
+
+    grunt.file.write(this.file.dest, min);
+
+    if (this.errorCount) { return false; }
+
+    grunt.log.writeln('File "' + this.file.dest + '" created.');
+    grunt.helper('min_max_info', min, max);
+  });
+
+
+  // Default command
+  grunt.registerTask('default','sass cssmin libs');
+
+  // Build full src
   grunt.registerTask('build','sass cssmin concat min');
 
 };
 
-
-/*var re = /<script src=\"\b[^>]*>([\s\S]*?)\"><\/script>/gm;
-
-var match;
-while (match = re.exec('<script src="js/src/app.js"></script>')) {
-  // full match is in match[0], whereas captured groups are in ...[1], ...[2], etc.
-  console.log(match[1]);
-}*/

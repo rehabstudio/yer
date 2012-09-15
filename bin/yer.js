@@ -161,6 +161,25 @@ program.command('project [name]')
           console.log( clc.yellow('Done!') );
           console.log( label('Run ')+valid(' cd js && npm install -d && grunt')+label(' to get started') );
 
+          var cmd = pro.spawn('cd', ['js']);
+
+          cmd.stdout.on('data', function(data){
+              process.stdout.write('out '+ data);
+          });
+
+          cmd.stderr.on('data', function(data){
+              process.stderr.write('err '+data);
+          });
+
+          cmd.on('exit', function(code){
+              console.log('end '+code);
+
+
+          });
+
+
+        });
+
       } else {
         console.log( clc.red('Could not fetch norm.css') );
       }
@@ -184,7 +203,7 @@ program.command('steven')
 
 });
 
-program.command('sync')
+/*program.command('sync')
   .description('sync assets')
   .action(function( name ){
 
@@ -219,15 +238,12 @@ program.command('sync')
 
     fs.writeFileSync('package.json', JSON.stringify(contents,null,'\t'));
 
-});
+});*/
 
 program.command('reset')
   .description('')
   .action(function(){
 
-    /*exec('ls',function(a, b, c){
-      console.log(b);
-    });*/
     exec('sudo rm -rf css img js && rm index.html',null);
 
 });

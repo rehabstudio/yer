@@ -70,25 +70,3 @@ Project name is optional, if left blank, the project name is assumed to be the n
  
 On completetion, your primary browser will open with the new relative host url.
 
-###yer sync
-
-On adding a new JS file in the __src__ or __lib__ directories, you can run this command to update your grunt file.
-
-To alter the order of your scripts, you can edit the __package.json__ file of your project
-	
-	// js/package.json
-	
-	//..
-	"yer": {
-		"lib": [
-			"lib/jquery.min.js",
-			"lib/new-library.js"
-		],
-		"src": [
-			"src/another-module.js",
-			"src/app.js"
-		]
-	}
-	//..
-
-and then run __yer sync__ again.
