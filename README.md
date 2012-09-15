@@ -84,4 +84,4 @@ This minifys and concats all the files within the _js/lib_ folder and outputs to
 
 ####grunt build
 
-This puts all of the javascript files ( _libs and src_ ) into one file at the end of a project. The contents are outputed to __projectname.mins.js__ in the _js_ folder.
+This puts all of the javascript files ( _libs and src_ ) into one file at the end of a project. The contents are outputed to __projectname.min.js__ in the _js_ folder.
