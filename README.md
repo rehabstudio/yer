@@ -76,10 +76,12 @@ grunt tasks
 
 ####grunt 
 
-This compress and compiles all of the scss and css files, also runs __grunt libs__
+This will compress and compile all of the scss and css files, also runs __grunt libs__
 
 ####grunt libs
 
 This minifys and concats all the files within the _js/lib_ folder and outputs to __dev.projectname.lib.js__ in the _js_ folder.
 
 ####grunt build
+
+This puts all of the javascript files ( _libs and src_ ) into one file at the end of a project. The contents are outputting to __projectname.mins.js__ in the _js_ folder.
