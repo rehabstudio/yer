@@ -70,3 +70,12 @@ Project name is optional, if left blank, the project name is assumed to be the n
  
 On completetion, your primary browser will open with the new relative host url.
 
+
+grunt tasks
+-----------
+
+grunt 
+
+grunt libs
+
+grunt build
