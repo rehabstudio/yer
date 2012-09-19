@@ -69,6 +69,24 @@ This is a lazytool™ designed to generate a vhost quickly and easily. This curr
 Project name is optional, if left blank, the project name is assumed to be the name of the project directory.
  
 On completetion, your primary browser will open with the new relative host url.
+	
+	// project folder called fluxxx
+	yer host
+
+	// => generates fluxxx.localhost
+
+
+	// project folder called dynmo.localhost
+	yer host
+
+	// => generates dynmo.localhost
+
+
+	// project folder called icecream-proto
+	yer host bacon
+
+	// => generates bacon.localhost
+
 
 
 grunt tasks

@@ -93,6 +93,10 @@ program.command('host [name] ]')
 
   name = name || (assets.working_path.substring(assets.working_path.lastIndexOf("/")+1, assets.working_path.length ));
 
+  if( ! /.localhost/.test( name ) ) {
+    name = name+'.localhost';
+  }
+
   switch( _OS ) {
 
     case 'Darwin' :
