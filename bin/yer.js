@@ -58,6 +58,8 @@ var program = require('commander'),
 
   system = OS[_OS],
 
+  VERSION = '0.0.2',
+
   reWrite = function( args ) {
     
     var data = fs.readFileSync(args.file, 'ascii');
@@ -87,8 +89,11 @@ var program = require('commander'),
     console.log( valid('All done. ')+clc.bright.yellow(assets.working_path)+valid.bold(' => ')+label(' @ http://'+name+'/') );
   };
 
+program.version( VERSION );
+
+
 program.command('host [name] ]')
-.description('add a vhost for a project, leave blank for taking the project folder as name')
+.description('add a vhost for a project')
 .action(function( name ){
 
   name = name || (assets.working_path.substring(assets.working_path.lastIndexOf("/")+1, assets.working_path.length ));
@@ -188,6 +193,35 @@ program.command('project [name]')
         console.log( clc.red('Could not fetch norm.css') );
       }
     });
+
+});
+
+program.command('install')
+  .description('setup a local cake project')
+  .action(function(){
+
+    program.prompt('MySQL username [root]: ', function( name ){
+
+      name = name || 'root';
+
+      program.password('MySQL Password: ', function(pass){
+        
+        var obj = {
+          apache : "/etc/apache2",
+          cake_path : __dirname.replace('yer/bin','')+'cakephp',
+          db : {
+            user : name,
+            pass : pass
+          }
+        };
+
+        fs.writeFileSync(__dirname.replace('bin','')+'yer.json', JSON.stringify(obj,null,'\t'));
+      
+        process.stdin.destroy();
+
+      });
+
+  });
 
 });
 
